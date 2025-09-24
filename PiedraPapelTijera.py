@@ -22,7 +22,8 @@ class PiedraPapeloTijera:
             ("Ninja", "🥷"),
             ("Pirata", "🏴‍☠️"),
             ("Meteorito", "☄️"),
-            ("Carro", "🚗")
+            ("Carro", "🚗"),
+            ("Camion", "🚚")
         ]
         self.ganados = 0
         self.perdidos = 0
@@ -103,16 +104,17 @@ class PiedraPapeloTijera:
     def quien_gana(self):
         # Diccionario de reglas: cada opción vence a la lista asociada
         reglas = {
-            "Piedra":     ["Tijera", "Lagarto", "Pistola", "Meteorito", "Carro"],
-            "Papel":      ["Piedra", "Spock", "Pistola", "Meteorito", "Carro"],
-            "Tijera":     ["Papel", "Lagarto", "Pistola", "Ninja", "Carro"],
-            "Lagarto":    ["Spock", "Papel", "Pistola", "Pirata", "Carro"],
-            "Spock":      ["Tijera", "Piedra", "Pistola", "Ninja", "Carro"],
-            "Pistola":    ["Spock", "Lagarto", "Tijera", "Pirata", "Carro"],
-            "Ninja":      ["Pirata", "Papel", "Lagarto", "Pistola", "Carro"],
-            "Pirata":     ["Papel", "Spock", "Meteorito", "Ninja", "Carro"],
-            "Meteorito":  ["Piedra", "Tijera", "Lagarto", "Spock", "Carro"],
-            "Carro":      ["Piedra", "Papel", "Tijera", "Lagarto", "Spock", "Pistola", "Ninja", "Pirata", "Meteorito"],
+            "Piedra":     ["Tijera", "Lagarto", "Pistola", "Meteorito", "Carro", "Camion"],
+            "Papel":      ["Piedra", "Spock", "Pistola", "Meteorito", "Carro", "Camion"],
+            "Tijera":     ["Papel", "Lagarto", "Pistola", "Ninja", "Carro", "Camion"],
+            "Lagarto":    ["Spock", "Papel", "Pistola", "Pirata", "Carro", "Camion"],
+            "Spock":      ["Tijera", "Piedra", "Pistola", "Ninja", "Carro", "Camion"],
+            "Pistola":    ["Spock", "Lagarto", "Tijera", "Pirata", "Carro", "Camion"],
+            "Ninja":      ["Pirata", "Papel", "Lagarto", "Pistola", "Carro", "Camion"],
+            "Pirata":     ["Papel", "Spock", "Meteorito", "Ninja", "Carro", "Camion"],
+            "Meteorito":  ["Piedra", "Tijera", "Lagarto", "Spock", "Carro", "Camion"],
+            "Carro":      ["Piedra", "Papel", "Tijera", "Lagarto", "Spock", "Pistola", "Ninja", "Pirata", "Meteorito", "Camion"],
+            "Camion":     ["Piedra", "Papel", "Tijera", "Lagarto", "Spock", "Pistola", "Ninja", "Pirata", "Meteorito", "Carro"],
         }
         if self.eleccion_del_usuario == self.bot:
             return "Empate"
